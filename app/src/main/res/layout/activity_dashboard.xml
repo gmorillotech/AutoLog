@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardActivity"
+    android:fitsSystemWindows="true"
+    android:background="@color/dark_blue_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/dark_blue_background">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/teal"
+            android:theme="@style/ThemeOverlay.MaterialComponents.ActionBar">
+
+            <TextView
+                android:id="@+id/toolbar_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Dashboard"
+                android:textColor="@color/mainText"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/dashboard_car_card"
+        layout="@layout/car_row"
+        android:layout_width="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/dashboard_car_card"
+        android:id="@+id/maintenance_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:layout_marginTop="6dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:visibility="visible">
+
+
+
+        <LinearLayout
+            android:id="@+id/container_oil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_oil_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oil Change"
+                android:textSize="18sp"
+                android:textColor="@color/mainText"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/text_oil_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oil Change"
+                android:textSize="18sp"
+                android:textColor="@color/secText"
+                android:clickable="false"
+                android:focusable="false"/>
+
+            <ProgressBar
+                android:id="@+id/progress_oil"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="4dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@android:color/holo_red_dark"
+                android:clickable="false"
+                android:focusable="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_tire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_tire_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tire Rotation"
+                android:textSize="18sp"
+                android:textColor="@color/mainText"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/text_tire_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tire Rotation"
+                android:textColor="@color/secText"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/progress_tire"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="4dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@android:color/holo_red_dark" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/container_brake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_brake_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brake Inspection"
+                android:textStyle="bold"
+                android:textColor="@color/mainText"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_brake_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Brake Inspection"
+                android:textColor="@color/secText"
+                android:textSize="18sp"/>
+
+            <ProgressBar
+                android:id="@+id/progress_brake"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="4dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@android:color/holo_red_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_wipers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_wiper_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wiper replacement"
+                android:textStyle="bold"
+                android:textColor="@color/mainText"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_wiper_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Wiper Replacement"
+                android:textColor="@color/secText"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/progress_wipers"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="4dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@android:color/holo_red_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_registration_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registration"
+                android:textStyle="bold"
+                android:textColor="@color/mainText"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/text_registration_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Registration"
+                android:textColor="@color/secText"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/progress_registration"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="4dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@android:color/holo_red_dark" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/future_features_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_maintenance_records"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Maintenance Records"
+            android:backgroundTint="@color/teal"
+            android:textColor="@color/mainText"
+            android:textSize="17sp"
+            android:layout_marginEnd="8dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_modifications_log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Modifications Log"
+            android:backgroundTint="@color/teal"
+            android:textSize="17sp"
+            android:textColor="@color/mainText"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

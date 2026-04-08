@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/border">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:background="@color/teal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif"
+            android:paddingBottom="15dp"
+            android:text="Add Car Details"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/photo_container"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/button_add_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Add Image"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/image_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/add_make"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="48dp"
+        android:hint="Make"
+        android:inputType="textCapWords"
+        android:textColorHint="@color/secText"
+        android:textColor="@color/mainText"/>
+
+    <EditText
+        android:id="@+id/add_model"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="Model"
+        android:inputType="textCapWords"
+        android:textColorHint="@color/secText"
+        android:textColor="@color/mainText"/>
+
+    <EditText
+        android:id="@+id/add_year"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="Year"
+        android:inputType="number"
+        android:textColorHint="@color/secText"
+        android:textColor="@color/mainText"/>
+
+    <EditText
+        android:id="@+id/add_miles"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="Current Mileage"
+        android:inputType="number"
+        android:textColorHint="@color/secText"
+        android:textColor="@color/mainText"/>
+
+    <EditText
+        android:id="@+id/add_vin"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:hint="VIN (optional)"
+        android:inputType="textCapCharacters"
+        android:textColorHint="@color/secText"
+        android:textColor="@color/mainText"/>
+
+</LinearLayout>
